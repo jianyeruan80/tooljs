@@ -1,10 +1,4 @@
-//addHandler(window, "online", function () { alert("Online"); }); 
-//var head= document.getElementById("head");setStyle(head,{width:"200px",height:"70px",display:"block"},false); false 累加，true一次性加
-//var style = getCurrentStyle(element,"font-size");
-//document.querySelector("#fitin span").style.fontSize="10px";
-//list.sort(function(a, b) {return parseInt(a.time) - parseInt(b.time)});
-//regexp ( ) [ ] { } . * ^ $ + ? \   当表示自己  /\[/   "\\["     <[^>]+> //不是>
-//html  <[^>]+>  or <.*?> 
+
 (function(document){
 var tools;
 var jsPath="../js/mi_";
@@ -16,7 +10,8 @@ var obj = {
                 element.addEventListener(type, handler, false); 
                }else if (element.attachEvent) {
                  element.attachEvent("on" + type, handler); 
-             }else { 　element["on" + type] = handler;} },
+             }else{element["on" + type] = handler;}
+			 },
  stopBubble:function(event){
             var e = event || window.event;
             if (e && e.stopPropagation ) 
@@ -101,7 +96,7 @@ replace:function(input,regExp){
 
    },
  getRegExp:function(input,regExp){
-    //var reEs = /\[(.*?)\]/;   gi
+  
            var reg = new RegExp('\\[(.*?)\\]', "g");
            reg.exec(input);
            return RegExp.$1;
@@ -134,4 +129,3 @@ replace:function(input,regExp){
 }
 window.tools = obj;
 })(document);
-tools.test();
